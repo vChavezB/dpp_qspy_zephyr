@@ -8,11 +8,13 @@ This repository contains an example integration of how to integrate QSPy in to t
 
 This example uses an external [custom Zephyr module](https://github.com/vChavezB/qpcpp_zephyr) to facilitate the integration of QPCPP as a Zephyr Library module. 
 
+
 ## Installation
 
 ```bash
 git clone https://github.com/vChavezB/dpp_qspy_zephyr --recurse-submodules
 ```
+QSPY is enabled by default in prj.conf as CONFIG_QSPY=y. This is passed to the [qpcpp_zephyr module](https://github.com/vChavezB/qpcpp_zephyr) and automatically selects the correct files to build Qspy for your Zephyr application.
 
 ## Build 
 
