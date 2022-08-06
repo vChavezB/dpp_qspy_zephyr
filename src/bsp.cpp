@@ -136,8 +136,9 @@ void BSP::displayPhilStat(uint8_t n, char const *stat) {
     else {
         ledOff();
     }
-    //printk("Philo[%d]->%s\n", n, stat);
-
+#ifndef Q_SPY
+    printk("Philo[%d]->%s\n", n, stat);
+#endif
     QS_BEGIN_ID(PHILO_STAT, AO_Philo[n]->m_prio) // app-specific record begin
         QS_U8(1, n);  // Philosopher number
         QS_STR(stat); // Philosopher status
@@ -180,11 +181,15 @@ namespace QP {
 // QF callbacks ==============================================================
 void QF::onStartup(void) {
     k_timer_start(&QF_tick_timer, K_MSEC(1), K_MSEC(1));
-    //printk("QF::onStartup\n");
+#ifndef Q_SPY
+    printk("QF::onStartup\n");
+#endif
 }
 //............................................................................
 void QF::onCleanup(void) {
-    //printk("QF::onCleanup\n");
+#ifndef Q_SPY
+    printk("QF::onCleanup\n");
+#endif
 }
 
 // QS callbacks ==============================================================
