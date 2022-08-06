@@ -13,7 +13,7 @@ jobs:
           run: git clone https://github.com/vChavezB/dpp_qspy_zephyr --recurse-submodules
         - name: Build
           run: |         
-              mkdir west_workspace
+              mkdir workspace
               cd workspace
               west init -m https://github.com/nrfconnect/sdk-nrf/
               west update --narrow -o=--depth=1
