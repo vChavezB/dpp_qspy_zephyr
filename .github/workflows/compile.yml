@@ -11,7 +11,7 @@ jobs:
         steps:
         - name: Pull project
           run: |
-             cd workdir/project
+             cd /workdir/project
              git clone https://github.com/vChavezB/dpp_qspy_zephyr --recurse-submodules  
              west init -m https://github.com/nrfconnect/sdk-nrf/
              west update --narrow -o=--depth=1
