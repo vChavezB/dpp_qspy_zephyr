@@ -1,0 +1,26 @@
+name: ESP32 CI/CD
+
+on:
+  push:
+    branches: [ actions ]
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        container: nordicplayground/nrfconnect-sdk:main
+        steps:
+        - name: Pull repo
+          run: git clone https://github.com/vChavezB/qpcpp.git -b esp32
+        - name: Build
+          working-directory: qpcpp/examples/esp-idf/dpp-esp-idf
+          run: |         
+              . $IDF_PATH/export.sh
+              idf.py build
+              mkdir ~/build
+              mv build/dpp.bin ~/build/app.bin
+              mv build/bootloader/bootloader.bin ~/build/bootloader.bin
+              mv build/partition_table/partition-table.bin ~/build/partition-table.bin
+        - name: Upload binary
+          uses: actions/upload-artifact@v3
+          with:
+            name: dpp-binary
+            path: ~/build/
