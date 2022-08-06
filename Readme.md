@@ -11,7 +11,7 @@ This example uses an external [custom Zephyr module](https://github.com/vChavezB
 ## Installation
 
 ```bash
-git clone https://github.com/vChavezB/dpp_qspy_zephyr --recurse-submodules
+git clone https://github.com/vChavezB/dpp_qspy_zephyr --recursive --shallow-submodules
 ```
 
 ## Build and Test
