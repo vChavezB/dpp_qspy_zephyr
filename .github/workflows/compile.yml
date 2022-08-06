@@ -13,10 +13,11 @@ jobs:
           uses: actions/checkout@v2
           with:
             submodules: 'true'
-        - name: Pull project
+        - name: Initialize Workspace
           working-directory: /workdir/project
           run: |
-             cd /workdir/project
              west init -m https://github.com/nrfconnect/sdk-nrf/
              west update --narrow -o=--depth=1
+        - name: Build
+          run:
              west build $GITHUB_WORKSPACE --board nrf52833dk_nrf52833
