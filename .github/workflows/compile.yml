@@ -19,4 +19,4 @@ jobs:
              cd /workdir/project
              west init -m https://github.com/nrfconnect/sdk-nrf/
              west update --narrow -o=--depth=1
-             west build $GITHUB_WORKSPACE/dpp_qspy_zephyr --board nrf52833dk_nrf52833
+             west build $GITHUB_WORKSPACE --board nrf52833dk_nrf52833
