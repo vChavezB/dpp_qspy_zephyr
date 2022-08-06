@@ -10,9 +10,9 @@ jobs:
         container: nordicplayground/nrfconnect-sdk:main
         steps:
         - name: Checkout repository
-          uses: actions/checkout@v2
+          uses: actions/checkout
           with:
-            submodules: 'true'
+            submodules: recursive
         - name: Initialize Workspace
           working-directory: /workdir/project
           run: |
