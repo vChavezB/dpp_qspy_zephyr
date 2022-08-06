@@ -13,12 +13,11 @@ jobs:
         - name: Build
           working-directory: qpcpp/examples/esp-idf/dpp-esp-idf
           run: |         
-              . $IDF_PATH/export.sh
-              idf.py build
-              mkdir ~/build
-              mv build/dpp.bin ~/build/app.bin
-              mv build/bootloader/bootloader.bin ~/build/bootloader.bin
-              mv build/partition_table/partition-table.bin ~/build/partition-table.bin
+              mkdir west_workspace
+              cd workspace
+              west init -m https://github.com/nrfconnect/sdk-nrf/
+              west update --narrow -o=--depth=1
+              west build ../dpp_qspy_zephyr --board nrf52833dk_nrf52833
         - name: Upload binary
           uses: actions/upload-artifact@v3
           with:
