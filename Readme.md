@@ -29,8 +29,16 @@ west update --narrow -o=--depth=1
 west build ../dpp_qspy_zephyr --board nrf52833dk_nrf52833
 ```
 
-#### Output
+#### Test
 
+Run qspy
+
+
+```
+qspy -c YOUR_COMPORT
+```
+
+##### Output
 ```
 ########## Trg-RST  QP-Ver=701,Build=220806_131317
            Obj-Dict 0x20003154->QS_RX
