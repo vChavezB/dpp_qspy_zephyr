@@ -9,8 +9,11 @@ jobs:
         runs-on: ubuntu-latest
         container: nordicplayground/nrfconnect-sdk:main
         steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
         - name: Pull project
           run: |
+             ls
              cd /workdir/project
              git clone https://github.com/vChavezB/dpp_qspy_zephyr --recurse-submodules  
              west init -m https://github.com/nrfconnect/sdk-nrf/
