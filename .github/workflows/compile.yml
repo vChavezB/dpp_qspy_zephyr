@@ -1,4 +1,4 @@
-name: ESP32 CI/CD
+name: Compile Verification
 
 on:
   push:
@@ -8,8 +8,8 @@ jobs:
         runs-on: ubuntu-latest
         container: nordicplayground/nrfconnect-sdk:main
         steps:
-        - name: Pull repo
-          run: git clone https://github.com/vChavezB/qpcpp.git -b esp32
+        - name: Pull project
+          run: git clone https://github.com/vChavezB/dpp_qspy_zephyr --recurse-submodels
         - name: Build
           working-directory: qpcpp/examples/esp-idf/dpp-esp-idf
           run: |         
