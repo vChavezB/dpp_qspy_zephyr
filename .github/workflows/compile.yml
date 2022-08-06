@@ -11,11 +11,12 @@ jobs:
         steps:
         - name: Checkout repository
           uses: actions/checkout@v2
+          with:
+            submodules: 'true'
         - name: Pull project
+          working-directory: /workdir/project
           run: |
-             ls
              cd /workdir/project
-             git clone https://github.com/vChavezB/dpp_qspy_zephyr --recurse-submodules  
              west init -m https://github.com/nrfconnect/sdk-nrf/
              west update --narrow -o=--depth=1
-             west build dpp_qspy_zephyr --board nrf52833dk_nrf52833
+             west build $GITHUB_WORKSPACE/dpp_qspy_zephyr --board nrf52833dk_nrf52833
