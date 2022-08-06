@@ -10,7 +10,7 @@ jobs:
         container: nordicplayground/nrfconnect-sdk:main
         steps:
         - name: Pull project
-          run: git clone https://github.com/vChavezB/dpp_qspy_zephyr --recurse-submodels
+          run: git clone https://github.com/vChavezB/dpp_qspy_zephyr --recurse-submodules
         - name: Build
           working-directory: qpcpp/examples/esp-idf/dpp-esp-idf
           run: |         
