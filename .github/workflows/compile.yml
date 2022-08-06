@@ -1,8 +1,9 @@
 name: Compile Verification
-
-on:
+On:
   push:
-    branches: [ actions ]
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 jobs:
     build:
         runs-on: ubuntu-latest
