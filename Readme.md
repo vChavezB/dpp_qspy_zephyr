@@ -14,7 +14,7 @@ This example uses an external [custom Zephyr module](https://github.com/vChavezB
 ```bash
 git clone https://github.com/vChavezB/dpp_qspy_zephyr --recurse-submodules
 ```
-QSPY is enabled by default in prj.conf as CONFIG_QSPY=y. This is passed to the [qpcpp_zephyr module](https://github.com/vChavezB/qpcpp_zephyr) and automatically selects the correct files to build Qspy for your Zephyr application.
+QSPY is enabled by default in `prj.conf` as `CONFIG_QSPY=y`. This is passed to the [qpcpp_zephyr module](https://github.com/vChavezB/qpcpp_zephyr) and automatically selects the correct files to build Qspy for your Zephyr application.
 
 ## Build 
 
