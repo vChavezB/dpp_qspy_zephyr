@@ -15,7 +15,7 @@ jobs:
              git clone https://github.com/vChavezB/dpp_qspy_zephyr --recurse-submodules  
              west init -m https://github.com/nrfconnect/sdk-nrf/
              west update --narrow -o=--depth=1
-             west build ../dpp_qspy_zephyr --board nrf52833dk_nrf52833
+             west build dpp_qspy_zephyr --board nrf52833dk_nrf52833
         - name: Upload binary
           uses: actions/upload-artifact@v3
           with:
