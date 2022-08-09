@@ -6,7 +6,7 @@ This repository contains an example integration of how to integrate QSPy in to t
 
 ## Dependencies
 
-This example uses an external [custom Zephyr module](https://github.com/vChavezB/qpcpp_zephyr) to facilitate the integration of QPCPP as a Zephyr Library module. 
+This example uses the QPCPP repository as a [custom Zephyr module](https://github.com/vChavezB/qpcpp/tree/12a5e5da472382671d6476fee1d8e74acfa8830f) to facilitate the integration of QPCPP as a Zephyr Library module. 
 
 
 ## Installation
