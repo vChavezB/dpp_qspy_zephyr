@@ -1,0 +1,16 @@
+manifest:
+  version: 0.7
+  defaults:
+    remote: qpcpp
+  remotes:
+    - name: qpcpp
+      url-base: https://github.com/vChavezB/
+  projects:
+    - name: qpcpp
+      repo-path: qpcpp
+      revision: 7fa73c17e5bae40e9c32b5084f24752ea3b56f70
+      import:
+        path-prefix: deps
+      path: qpcpp 
+  self:
+    path: .
